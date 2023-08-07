@@ -3,13 +3,14 @@ import connectSliders from "./connect_sliders";
 import getColors from "./process_image";
 import AlbumData from "./album_data";
 
-function setupBackground() {
+function setupBackground(image: string) {
 	const poster = document.createElement("div");
 	poster.classList.add("poster");
 	poster.id = "capture";
 	poster.style.backgroundColor = "#ebeae6";
 
 	document.getElementById("poster-div")!.appendChild(poster);
+	(document.getElementById("background")! as HTMLImageElement).src = image;
 	return poster;
 }
 
@@ -95,7 +96,7 @@ export default async function createAlbumCover(albumData: AlbumData) {
 		return;
 	}
 
-	const container = setupBackground();
+	const container = setupBackground(image);
 
 	addAlbumCover(container, image);
 

@@ -8,14 +8,13 @@ body {
 
 .background {
 	position: absolute;
-	width: 100vw;
-	height: 100vh;
-	background-image: url("/endless.jpeg");
+	width: 120vw;
+	height: 120vh;
 	background-size: cover;
 	background-position: center;
 	z-index: -1;
 	filter: blur(30px);
-	opacity: 0.7;
+	opacity: 1;
 }
 
 .container {
