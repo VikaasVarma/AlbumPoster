@@ -35,7 +35,6 @@ function selectAlbum(albumData: AlbumData) {
 		capture.remove();
 	}
 	albumData.initialiseData().then(() => {
-		console.log(albumData);
 		createAlbumCover(albumData);
 		setupColors(albumData);
 	});

@@ -7,7 +7,7 @@ function createCanvas(): CanvasRenderingContext2D | null {
 	const container = document.getElementById("capture");
 
 	if (container === null) {
-		console.log("Container not found");
+		console.error("Container not found");
 		return null;
 	}
 
