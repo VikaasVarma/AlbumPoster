@@ -1,0 +1,13 @@
+# Editor directories and files
+.vscode/*
+.DS_Store
+
+
+# Environment
+.env.development
+
+# Packages
+node_modules/
+.vite/
+package-lock.json
+package.json

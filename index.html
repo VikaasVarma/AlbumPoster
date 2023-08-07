@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Album Poster</title>
+	</head>
+	<body>
+		<div class="background"></div>
+		<div class="container">
+			<div style="display: flex; flex-direction: column; padding: 5%">
+				<div>
+					<div style="display: flex">
+						<div id="album-input-dropdown">
+							<input
+								type="text"
+								class="album-input"
+								id="album-input"
+								placeholder="Album Title" />
+							<div style="height: 0px; position: relative; z-index: 1">
+								<div class="dropdown-items" id="dropdown-items"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<h1 class="header-text">Title</h1>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Font Size:</h1>
+					<input
+						type="range"
+						min="50"
+						max="400"
+						step="any"
+						class="slider"
+						id="title-font-size" />
+				</div>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Letter Spacing:</h1>
+					<input
+						type="range"
+						min="0"
+						max="2"
+						step="any"
+						class="slider"
+						id="title-letter-spacing" />
+				</div>
+
+				<h1 class="header-text">Artist</h1>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Font Size:</h1>
+					<input
+						type="range"
+						min="50"
+						max="250"
+						step="any"
+						class="slider"
+						id="artist-font-size" />
+				</div>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Letter Spacing:</h1>
+					<input
+						type="range"
+						min="0"
+						max="0.5"
+						step="any"
+						class="slider"
+						id="artist-letter-spacing" />
+				</div>
+
+				<h1 class="header-text">Metadata</h1>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Font Size:</h1>
+					<input
+						type="range"
+						min="25"
+						max="150"
+						step="any"
+						class="slider"
+						id="metadata-font-size" />
+				</div>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Letter Spacing:</h1>
+					<input
+						type="range"
+						min="0"
+						max="0.5"
+						step="any"
+						class="slider"
+						id="metadata-letter-spacing" />
+				</div>
+
+				<h1 class="header-text">Tracks</h1>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Font Size:</h1>
+					<input
+						type="range"
+						min="25"
+						max="150"
+						step="any"
+						class="slider"
+						id="track-font-size" />
+				</div>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Letter Spacing:</h1>
+					<input
+						type="range"
+						min="0"
+						max="0.5"
+						step="any"
+						class="slider"
+						id="track-letter-spacing" />
+				</div>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Height:</h1>
+					<input
+						type="range"
+						min="-1.5"
+						max="1.5"
+						step="any"
+						class="slider"
+						id="track-height" />
+				</div>
+				<div style="display: flex; align-items: end">
+					<h1 class="description-text">Width:</h1>
+					<input
+						type="range"
+						min="0"
+						max="20"
+						step="any"
+						class="slider"
+						id="track-width" />
+				</div>
+
+				<!-- Spacer -->
+				<div style="flex: 1"></div>
+
+				<button class="wide-button-1" id="reset-colors" style="--color: #ebeae6">
+					Recalculate Colors
+				</button>
+
+				<button class="wide-button-2" id="download" style="--color: #5e5df0">
+					Download
+				</button>
+			</div>
+			<div class="container-right">
+				<div id="poster-div">
+					<!-- <div clas=s"poster" id="capture" style="background-color: #ebeae6">
+						<img class="image" id="album-cover" src="/endless.jpeg" />
+					</div> -->
+				</div>
+			</div>
+		</div>
+		<script type="module" src="/src/main.ts"></script>
+	</body>
+</html>

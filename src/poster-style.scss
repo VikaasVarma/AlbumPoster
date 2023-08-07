@@ -1,0 +1,125 @@
+@font-face {
+	font-family: "grotesk";
+	src: url("/grotesk.ttf");
+}
+
+@font-face {
+	font-family: "grotesk-thick";
+	src: url("/grotesk-thick.ttf");
+}
+
+.poster {
+	display: grid;
+	grid-template-columns: 5% 1fr 1fr 5%;
+	grid-template-rows: 1% auto 6% 2.5% 3% minmax(0, 1fr);
+	gap: 1%;
+	height: 800px;
+	aspect-ratio: 2 / 3;
+	overflow: hidden;
+	margin: auto;
+}
+
+.poster > div {
+	display: flex;
+}
+
+.image {
+	grid-column: 2 / 4;
+	grid-row: 2 / 3;
+	width: 100%;
+}
+
+.title {
+	grid-column: 2 / 4;
+	grid-row: 3 / 4;
+	align-items: end;
+}
+
+.artist {
+	grid-column: 2 / 3;
+	grid-row: 4 / 5;
+	align-items: end;
+}
+
+.metadata {
+	grid-column: 2 / 4;
+	grid-row: 5 / 6;
+	justify-content: space-between;
+	align-items: end;
+}
+
+.tracks {
+	grid-column: 2 / 4;
+	grid-row: 6 / 7;
+	margin-top: 5%;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	flex-direction: column;
+}
+
+.divider {
+	grid-column: 1 / 5;
+	grid-row: var(--row) / calc(var(--row) + 1);
+	width: 92%;
+	height: 2px;
+	background-color: #030100;
+	margin-inline: auto;
+}
+
+.title-text {
+	font-size: 325%;
+	font-weight: 700;
+	font-family: "grotesk-thick";
+	letter-spacing: 0.8vh;
+	margin: 0;
+	white-space: nowrap;
+}
+
+.artist-text {
+	font-size: 150%;
+	font-weight: 700;
+	font-family: "grotesk";
+	letter-spacing: 0.3vh;
+	transform: scale(1, 0.9);
+	margin: 0 0 1% 0;
+}
+
+.metadata-text {
+	font-size: 75%;
+	font-weight: 700;
+	font-family: "grotesk";
+	letter-spacing: 0.15vh;
+	transform: scale(1, 0.9);
+	margin: 0;
+	white-space: nowrap;
+}
+
+.track-text {
+	font-size: 75%;
+	font-weight: 700;
+	font-family: "grotesk";
+	transform: scale(1, 0.9);
+	margin-top: 0.85%;
+	margin-right: 6.25%;
+}
+
+.bullet {
+	font-size: 75%;
+	margin-left: 0.5vh;
+	margin-right: -0.5vh;
+	font-weight: 500;
+	font-family: "grotesk";
+	transform: scale(1, 0.9);
+	text-align: left;
+	height: 0;
+}
+
+.skill-wheel {
+	grid-column: 3 / 5;
+	grid-row: 6 / 7;
+	align-self: end;
+	justify-self: end;
+	justify-content: end;
+	height: 100%;
+	margin-right: 5%;
+}
