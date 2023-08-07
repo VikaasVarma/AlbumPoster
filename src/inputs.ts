@@ -8,9 +8,11 @@ import html2canvas from "html2canvas";
 import { saveAs } from "file-saver";
 
 function setupColors(albumData: AlbumData) {
-	document.getElementById("reset-colors")?.addEventListener("click", async () => {
-		createSkillWheel(await getColors(), albumData.skill_means ?? []);
-	});
+	document
+		.getElementById("reset-colors")
+		?.addEventListener("click", async () =>
+			createSkillWheel(await getColors(), albumData.skill_means ?? [])
+		);
 }
 
 function setupDownload() {
@@ -36,7 +38,6 @@ function selectAlbum(albumData: AlbumData) {
 	}
 	albumData.initialiseData().then(() => {
 		createAlbumCover(albumData);
-		setupColors(albumData);
 	});
 }
 
@@ -86,4 +87,5 @@ function setupDropdown(albumData: AlbumData) {
 export default function handleInputs(albumData: AlbumData) {
 	setupDownload();
 	setupDropdown(albumData);
+	setupColors(albumData);
 }

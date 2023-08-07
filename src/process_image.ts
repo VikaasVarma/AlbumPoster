@@ -90,28 +90,37 @@ function toFloat32Array(arr: ArrayLike<number>): Float32Array {
 }
 
 function getImageData(img: HTMLImageElement): Promise<Uint8ClampedArray> {
+	function _getImageData(_img: HTMLImageElement): Uint8ClampedArray {
+		const canvas = document.createElement("canvas");
+		const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
+
+		canvas.width = _img.width;
+		canvas.height = _img.height;
+
+		ctx.drawImage(_img, 0, 0, _img.width, _img.height);
+
+		const rgba = ctx.getImageData(0, 0, _img.width, _img.height).data;
+		const rgb = new Uint8ClampedArray(Math.floor(rgba.length / 4) * 3);
+
+		let j = 0;
+		for (let i = 0; i < rgba.length; i += 4) {
+			rgb[j] = rgba[i];
+			rgb[j + 1] = rgba[i + 1];
+			rgb[j + 2] = rgba[i + 2];
+			j += 3;
+		}
+
+		return rgb;
+	}
+
+	if (img.complete && img.naturalWidth !== 0) {
+		return new Promise((resolve) => {
+			resolve(_getImageData(img));
+		});
+	}
 	return new Promise((resolve) => {
 		img.onload = () => {
-			const canvas = document.createElement("canvas");
-			const ctx = canvas.getContext("2d") as CanvasRenderingContext2D;
-
-			canvas.width = img.width;
-			canvas.height = img.height;
-
-			ctx.drawImage(img, 0, 0, img.width, img.height);
-
-			const rgba = ctx.getImageData(0, 0, img.width, img.height).data;
-			const rgb = new Uint8ClampedArray(Math.floor(rgba.length / 4) * 3);
-
-			let j = 0;
-			for (let i = 0; i < rgba.length; i += 4) {
-				rgb[j] = rgba[i];
-				rgb[j + 1] = rgba[i + 1];
-				rgb[j + 2] = rgba[i + 2];
-				j += 3;
-			}
-
-			resolve(rgb);
+			resolve(_getImageData(img));
 		};
 	});
 }

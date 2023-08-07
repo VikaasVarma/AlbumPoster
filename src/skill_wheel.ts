@@ -87,11 +87,11 @@ async function drawLabels(canvas: CanvasRenderingContext2D) {
 		"Danceability",
 		"Energy",
 		"           Happiness",
-		"Instrumentalness       ",
+		"Instrumentalness   ",
 		"Tempo",
 	];
 
-	const offsets = [18, 50, 40, 40, 45];
+	const offsets = [18, 50, 45, 45, 45];
 
 	canvas.beginPath();
 	for (let i = 0; i < 5; i++) {
