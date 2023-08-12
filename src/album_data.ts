@@ -38,7 +38,7 @@ export default class AlbumData {
 			.toString()
 			.padStart(2, "0")}`;
 
-		this.date = moment(album.body.release_date).format("DD MMMM YYYY");
+		this.date = moment(album.body.release_date).format("D MMMM YYYY");
 
 		this.genres = artist.body.genres;
 		this.tracks = tracks.body.tracks.map(({ name }) => name.split(" - ")[0]);

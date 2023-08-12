@@ -18,12 +18,13 @@ function setupColors(albumData: AlbumData) {
 function setupDownload() {
 	document.getElementById("download")?.addEventListener("click", () => {
 		// Render and download the album poster
-		let element = document.getElementById("capture");
+		const element = document.getElementById("capture")!;
+		const title = (document.getElementById("album-input") as HTMLInputElement).value;
 		if (element !== null) {
-			html2canvas(element).then((canvas) => {
+			html2canvas(element, { allowTaint: true, useCORS: true }).then((canvas) => {
 				canvas.toBlob(function (blob) {
 					if (blob !== null) {
-						saveAs(blob, "album-poster.png");
+						saveAs(blob, title ?? "album-poster.png");
 					}
 				});
 			});
