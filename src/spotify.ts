@@ -2,7 +2,7 @@ import axios from "axios";
 import SpotifyWebApi from "spotify-web-api-node";
 
 const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-const clientSecret = import.meta.env.VITE_SPOTIFY_SECRET_ID;
+const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
 
 async function setupSpotifyApi(): Promise<SpotifyWebApi> {
 	const spotifyApi = new SpotifyWebApi({
