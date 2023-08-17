@@ -97,7 +97,8 @@ function getImageData(img: HTMLImageElement): Promise<Uint8ClampedArray> {
 		canvas.width = _img.width;
 		canvas.height = _img.height;
 
-		ctx.drawImage(_img, 0, 0, _img.width, _img.height);
+		// Ensure that the image is not too large
+		ctx.drawImage(_img, 0, 0, Math.min(_img.width, 512), Math.min(_img.height, 512));
 
 		const rgba = ctx.getImageData(0, 0, _img.width, _img.height).data;
 		const rgb = new Uint8ClampedArray(Math.floor(rgba.length / 4) * 3);

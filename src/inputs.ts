@@ -21,10 +21,10 @@ function setupDownload() {
 		const element = document.getElementById("capture")!;
 		const title = (document.getElementById("album-input") as HTMLInputElement).value;
 		if (element !== null) {
-			html2canvas(element, { allowTaint: true, useCORS: true }).then((canvas) => {
+			html2canvas(element, { scale: 4, allowTaint: true, useCORS: true }).then((canvas) => {
 				canvas.toBlob(function (blob) {
 					if (blob !== null) {
-						saveAs(blob, title ?? "album-poster.png");
+						saveAs(blob, `${title}.png` ?? "album-poster.png");
 					}
 				});
 			});

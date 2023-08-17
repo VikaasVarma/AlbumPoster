@@ -11,10 +11,10 @@
 .poster {
 	display: grid;
 	grid-template-columns: 5% 1fr 1fr 5%;
-	grid-template-rows: 1% auto 6% 2.5% 3% minmax(0, 1fr);
+	grid-template-rows: 2.5% auto 6% 2.5% 3% minmax(0, 1fr) 1%;
 	gap: 1%;
 	height: 800px;
-	aspect-ratio: 2 / 3;
+	aspect-ratio: 1 / 1.41;
 	overflow: hidden;
 	margin: auto;
 }
@@ -36,7 +36,7 @@
 }
 
 .artist {
-	grid-column: 2 / 3;
+	grid-column: 2 / 4;
 	grid-row: 4 / 5;
 	align-items: end;
 }
@@ -81,7 +81,7 @@
 	font-family: "grotesk";
 	letter-spacing: 0.3vh;
 	transform: scale(1, 0.9);
-	margin: 0 0 1% 0;
+	margin: 0;
 }
 
 .metadata-text {
@@ -120,6 +120,6 @@
 	align-self: end;
 	justify-self: end;
 	justify-content: end;
-	height: 100%;
-	margin-right: 5%;
+	height: 90%;
+	margin-right: 8%;
 }
