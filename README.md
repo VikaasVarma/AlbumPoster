@@ -1,5 +1,5 @@
 # AlbumPoster
-HTML frontend hooked up to Spotify API to generate a good looking poster for any input album.
+HTML frontend hooked up to Spotify API to generate a good-looking poster for any album on Spotify. It will pick a color scheme from the album cover and generate a wheel of information in the bottom right (perfect for an NFC tag connected to a shortcut).
 
 # Usage
 
